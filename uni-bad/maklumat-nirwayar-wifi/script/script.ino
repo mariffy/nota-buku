@@ -14,7 +14,6 @@ void loop() {
 
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); //run
   DigiKeyboard.delay(500);
-  // DigiKeyboard.println("cmd"); //smallest cmd window possible
   DigiKeyboard.println("cmd /k mode con: cols=15 lines=1"); //smallest cmd window possible
   DigiKeyboard.delay(500);
   DigiKeyboard.delay(500);
