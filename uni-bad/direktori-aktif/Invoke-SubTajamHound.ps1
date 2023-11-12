@@ -1,4 +1,4 @@
-function Invoke-Testing1SubFunc
+function Invoke-SubTajamHound
 {
 
     [CmdletBinding()]
